@@ -5,6 +5,7 @@ const PHOTOS = [
   { url: "https://cdn.poehali.dev/files/d57d8d9a-3e90-4aa4-8b51-c01abfdfa5d9.jpg", caption: "🦋 С бабочками", color: "#BF00FF" },
   { url: "https://cdn.poehali.dev/files/0d91ff8a-fbb3-4d3d-99b7-e717d7055623.jpg", caption: "🌸 С букетом", color: "#00FF88" },
   { url: "https://cdn.poehali.dev/files/1e102777-e53e-4175-bd9f-f823468e346e.jpg", caption: "💖 В розовом", color: "#FF6B00" },
+  { url: "https://cdn.poehali.dev/files/61697d1e-ea19-47ba-a315-af4bc56f5088.jpg", caption: "🌹 С розами", color: "#FF2D78" },
 ];
 
 export default function PhotosSection() {
