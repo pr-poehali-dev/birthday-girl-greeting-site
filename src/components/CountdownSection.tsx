@@ -38,7 +38,7 @@ function CountdownCard({ value, label }: { value: number; label: string }) {
 }
 
 export default function CountdownSection() {
-  const countdown = useCountdown(new Date("2025-04-15"));
+  const countdown = useCountdown(new Date("2025-05-01"));
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-6 py-24"
