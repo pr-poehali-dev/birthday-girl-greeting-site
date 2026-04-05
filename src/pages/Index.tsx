@@ -3,13 +3,15 @@ import Confetti from "@/components/Confetti";
 import CountdownSection from "@/components/CountdownSection";
 import WishesSection from "@/components/WishesSection";
 import GamesSection from "@/components/GamesSection";
+import PhotosSection from "@/components/PhotosSection";
 
-type Section = "home" | "countdown" | "wishes" | "games";
+type Section = "home" | "countdown" | "wishes" | "games" | "photos";
 
 const NAV_ITEMS: { id: Section; label: string; emoji: string }[] = [
   { id: "home", label: "Главная", emoji: "🎉" },
   { id: "countdown", label: "Отсчёт", emoji: "⏰" },
   { id: "wishes", label: "Пожелания", emoji: "💌" },
+  { id: "photos", label: "Фото", emoji: "📸" },
   { id: "games", label: "Игры", emoji: "🎮" },
 ];
 
@@ -36,7 +38,7 @@ export default function Index() {
               key={item.id}
               onClick={() => setSection(item.id)}
               className={`
-                flex items-center gap-1.5 px-3 py-2.5 md:px-5 rounded-[1.5rem] transition-all duration-300 font-rubik font-medium text-sm
+                flex items-center gap-1.5 px-3 py-2.5 md:px-4 rounded-[1.5rem] transition-all duration-300 font-rubik font-medium text-sm
                 ${section === item.id
                   ? "bg-party-yellow text-gray-900 font-black shadow-lg scale-105"
                   : "text-white/60 hover:text-white hover:bg-white/10"
@@ -118,12 +120,13 @@ export default function Index() {
 
           {/* Feature strip */}
           <div className="py-12 px-6" style={{ background: "#0f0f22" }}>
-            <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-4">
               {[
                 { emoji: "🎉", title: "Поздравление", desc: "Яркое и особенное", to: "home" as Section },
-                { emoji: "⏰", title: "Обратный отсчёт", desc: "До следующего ДР", to: "countdown" as Section },
-                { emoji: "💌", title: "3 пожелания", desc: "От близких и друзей", to: "wishes" as Section },
-                { emoji: "🎮", title: "3 игры", desc: "Весело и задорно", to: "games" as Section },
+                { emoji: "⏰", title: "Отсчёт", desc: "До следующего ДР", to: "countdown" as Section },
+                { emoji: "💌", title: "Пожелания", desc: "От близких и друзей", to: "wishes" as Section },
+                { emoji: "📸", title: "Фото", desc: "Красивые моменты", to: "photos" as Section },
+                { emoji: "🎮", title: "Игры", desc: "Весело и задорно", to: "games" as Section },
               ].map((f, i) => (
                 <div
                   key={i}
@@ -143,6 +146,7 @@ export default function Index() {
 
       {section === "countdown" && <CountdownSection />}
       {section === "wishes" && <WishesSection />}
+      {section === "photos" && <PhotosSection />}
       {section === "games" && <GamesSection />}
 
       <div className="h-28" />
